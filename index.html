@@ -820,23 +820,23 @@
       z-index: 1;
     }
 
-    /* gold status badge — top-left */
+    /* gold status badge — flows inside details container above address */
     .YLOPO_resultsWidget .listing-status-flag {
-      position: absolute !important;
-      top: 14px !important;
-      left: 14px !important;
-      z-index: 10 !important;
+      position: static !important;
+      display: inline-flex !important;
+      width: fit-content !important;
       background: var(--gold) !important;
       color: var(--white) !important;
       font-family: var(--font-label) !important;
-      font-size: 10px !important;
-      font-weight: 600 !important;
-      letter-spacing: 0.1em !important;
+      font-size: 11px !important;
+      font-weight: 500 !important;
+      letter-spacing: 0.06em !important;
       text-transform: uppercase !important;
-      padding: 5px 10px !important;
-      border-radius: 3px !important;
+      padding: 4px 10px !important;
+      border-radius: 0 !important;
       border: none !important;
       box-shadow: none !important;
+      order: -1 !important;
     }
 
     /* details panel — above gradient, at bottom */
@@ -1852,7 +1852,7 @@
       <p class="eyebrow reveal">Handpicked Just for You</p>
       <h2 class="section-title reveal stagger-1">Featured Listings</h2>
     </div>
-    <div class="YLOPO_resultsWidget" data-search='{"locations":[{"city":"Las Vegas","state":"NV"},{"city":"Henderson","state":"NV"}],"propertyTypes":["house","condo","townhouse"],"status":"active"}'></div>
+    <div class="YLOPO_resultsWidget" data-search='{"locations":[{"city":"Las Vegas","state":"NV"},{"city":"Henderson","state":"NV"}],"propertyTypes":["house","condo","townhouse"],"status":"active","limit":6}'></div>
     <div class="listings-cta reveal stagger-4">
       <a href="https://search.crightonrinalditeam.com" class="btn-outline-gold">View All Listings</a>
     </div>
