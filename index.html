@@ -707,6 +707,227 @@
       margin-top: 32px;
     }
 
+    /* ── YLOPO WIDGET — prop-card visual override ─────────────────── */
+    .YLOPO_resultsWidget { margin-top: 32px; }
+
+    /* strip default widget chrome */
+    .YLOPO_resultsWidget .widget-sort-panel,
+    .YLOPO_resultsWidget .pagination-footer,
+    .YLOPO_resultsWidget .widget-results-header,
+    .YLOPO_resultsWidget img.static-google-map,
+    .YLOPO_resultsWidget .favorite-icon-wrapper,
+    .YLOPO_resultsWidget .card-icon,
+    .YLOPO_resultsWidget .property-details-wrap,
+    .YLOPO_resultsWidget .gallery-card-b-generate-sort-block,
+    .YLOPO_resultsWidget .idx-compliance,
+    .YLOPO_resultsWidget .gallery-card-b-compliance-display,
+    .YLOPO_resultsWidget .listin-image-with-map-compliance-bin { display: none !important; }
+
+    /* 3-column grid matching .listings-grid */
+    .YLOPO_resultsWidget .widget-gallery-container,
+    .YLOPO_resultsWidget .widget-gallery-container.DEFAULT {
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr) !important;
+      gap: var(--gap-sm) !important;
+      flex-direction: unset !important;
+      flex-wrap: unset !important;
+      overflow: visible !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      transform: none !important;
+    }
+
+    /* card item — matches .prop-card height and shape */
+    .YLOPO_resultsWidget .grid-view-item {
+      height: 520px !important;
+      min-height: unset !important;
+      max-height: unset !important;
+      border-radius: var(--radius) !important;
+      overflow: hidden !important;
+      position: relative !important;
+      width: auto !important;
+      flex: unset !important;
+      margin: 0 !important;
+    }
+
+    /* card body fills the container */
+    .YLOPO_resultsWidget .gallery-card-b {
+      position: absolute !important;
+      inset: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      display: block !important;
+    }
+    .YLOPO_resultsWidget .gallery-card-b-main-card {
+      position: absolute !important;
+      inset: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: flex-end !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      background: transparent !important;
+    }
+
+    /* image area covers entire card */
+    .YLOPO_resultsWidget .gallery-card-b-image-container,
+    .YLOPO_resultsWidget .gallery-card-b-image-container > a {
+      position: absolute !important;
+      inset: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      display: block !important;
+    }
+    .YLOPO_resultsWidget .listing-image-with-map-image-layout {
+      position: absolute !important;
+      inset: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+    }
+    .YLOPO_resultsWidget .full-background-img {
+      position: absolute !important;
+      inset: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      overflow: hidden !important;
+    }
+    .YLOPO_resultsWidget .full-background-img .img {
+      width: 100% !important;
+      height: 100% !important;
+      background-size: cover !important;
+      background-position: center !important;
+      transition: transform 0.55s ease !important;
+    }
+    .YLOPO_resultsWidget .grid-view-item:hover .full-background-img .img {
+      transform: scale(1.05) !important;
+    }
+
+    /* dark gradient overlay from bottom */
+    .YLOPO_resultsWidget .gallery-card-b-main-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top,
+        rgba(0,0,0,0.88) 0%,
+        rgba(0,0,0,0.35) 45%,
+        transparent 100%
+      );
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* gold status badge — top-left */
+    .YLOPO_resultsWidget .listing-status-flag {
+      position: absolute !important;
+      top: 14px !important;
+      left: 14px !important;
+      z-index: 10 !important;
+      background: var(--gold) !important;
+      color: var(--white) !important;
+      font-family: var(--font-label) !important;
+      font-size: 10px !important;
+      font-weight: 600 !important;
+      letter-spacing: 0.1em !important;
+      text-transform: uppercase !important;
+      padding: 5px 10px !important;
+      border-radius: 3px !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+
+    /* details panel — above gradient, at bottom */
+    .YLOPO_resultsWidget .gallery-card-b-details-container {
+      position: relative !important;
+      z-index: 2 !important;
+      padding: 16px 20px 20px !important;
+      background: transparent !important;
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 8px !important;
+      border-top: none !important;
+      box-shadow: none !important;
+    }
+    .YLOPO_resultsWidget .gallery-card-b-summary-details {
+      background: transparent !important;
+      border: none !important;
+      padding: 0 !important;
+      box-shadow: none !important;
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 6px !important;
+    }
+
+    /* price — large, prominent */
+    .YLOPO_resultsWidget .gallery-card-b-address-block .layout > div:first-child {
+      font-family: var(--font-body) !important;
+      font-weight: 700 !important;
+      font-size: 20px !important;
+      color: var(--white) !important;
+      letter-spacing: -0.01em !important;
+      line-height: 1.2 !important;
+    }
+
+    /* address / locality */
+    .YLOPO_resultsWidget .gallery-card-b-address-block .locality {
+      font-family: var(--font-body) !important;
+      font-size: 13px !important;
+      font-weight: 500 !important;
+      color: rgba(255,255,255,0.85) !important;
+      line-height: 1.4 !important;
+      margin: 0 !important;
+    }
+    .YLOPO_resultsWidget .locality span { display: inline !important; }
+
+    /* beds/baths/sqft row */
+    .YLOPO_resultsWidget .summary-info {
+      display: flex !important;
+      align-items: center !important;
+      flex-wrap: wrap !important;
+      gap: 4px 14px !important;
+      padding: 0 !important;
+      background: transparent !important;
+      border: none !important;
+    }
+    .YLOPO_resultsWidget .info-block {
+      display: flex !important;
+      align-items: center !important;
+      gap: 4px !important;
+      padding: 0 !important;
+      border: none !important;
+      border-right: none !important;
+    }
+    .YLOPO_resultsWidget .info-block > span:not(.label) {
+      font-family: var(--font-body) !important;
+      font-size: 12px !important;
+      font-weight: 500 !important;
+      color: rgba(255,255,255,0.8) !important;
+      letter-spacing: 0.01em !important;
+    }
+    .YLOPO_resultsWidget .info-block .label {
+      font-family: var(--font-body) !important;
+      font-size: 11px !important;
+      color: rgba(255,255,255,0.5) !important;
+    }
+
+    /* responsive: 2-col at 1100px, 1-col at mobile */
+    @media (max-width: 1100px) {
+      .YLOPO_resultsWidget .widget-gallery-container,
+      .YLOPO_resultsWidget .widget-gallery-container.DEFAULT {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+    }
+    @media (max-width: 768px) {
+      .YLOPO_resultsWidget .widget-gallery-container,
+      .YLOPO_resultsWidget .widget-gallery-container.DEFAULT {
+        grid-template-columns: 1fr !important;
+      }
+      .YLOPO_resultsWidget .grid-view-item { height: 440px !important; }
+    }
+
     /* ── TESTIMONIAL POPOUT ────────────────────────────────────────── */
     .tp-section {
       padding: 100px var(--pad-x);
