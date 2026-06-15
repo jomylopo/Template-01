@@ -1,0 +1,10 @@
+node_modules/
+.firecrawl/
+.agents/
+temporary screenshots/
+.vercel
+# Files containing API secrets
+MAPS.md
+henderson.html
+mapbox2.html
+webmap.html
